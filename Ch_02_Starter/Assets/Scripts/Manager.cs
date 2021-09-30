@@ -7,12 +7,14 @@ using UnityEngine.SceneManagement;
 public class Manager : MonoBehaviour
 {
     // TODO:
-    // - Make this manager a Singleton
-    // - Add player score with initial value
+    // - Make this manager class a Singleton
+
+    public int score = 0;
+    public int startingLevel = 1;
 
     public void StartGame()
     {
         Debug.Log("New game has started...");
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(startingLevel);
     }
 }
