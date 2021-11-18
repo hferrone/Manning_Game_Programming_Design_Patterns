@@ -323,8 +323,7 @@
 "Assets/Scripts/BaseEnemy.cs"
 "Assets/Scripts/EnemyData.cs"
 "Assets/Scripts/Ogre.cs"
-"Assets/Scripts/PrototypeSpawner.cs"
-"Assets/Scripts/Serpent.cs"
+"Assets/Scripts/Spawner.cs"
 -langversion:8.0
 
 /deterministic

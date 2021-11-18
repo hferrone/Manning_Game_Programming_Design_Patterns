@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScriptableSingleton<T> : ScriptableObject where T : ScriptableObject    
+public class ScriptableSingleton<T> : ScriptableObject where T : ScriptableSingleton<T>    
 {
     private static T _instance;    
     public static T Instance    
@@ -11,15 +11,14 @@ public class ScriptableSingleton<T> : ScriptableObject where T : ScriptableObjec
         {
             if (_instance == null)    
             {
-                T[] singletons = Resources.LoadAll<T>("");    
-
+                T[] singletons = Resources.LoadAll<T>("");
                 if(singletons == null || singletons.Length < 1)    
                 {
-                    throw new System.Exception("No " + typeof(T).Name + " “[CA]”singleton objects found...");    
+                    throw new System.Exception("No " + typeof(T).Name + " singleton objects found...");    
                 }
                 else if(singletons.Length > 1)    
                 {
-                    Debug.LogWarning("More than one " + typeof(T).Name + " “[CA]”singleton object found...");    
+                    Debug.LogWarning("More than one " + typeof(T).Name + " singleton object found...");    
                 }
 
                 _instance = singletons[0];    

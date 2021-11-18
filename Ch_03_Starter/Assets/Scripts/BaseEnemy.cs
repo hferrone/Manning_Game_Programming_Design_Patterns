@@ -6,10 +6,15 @@ public abstract class BaseEnemy : MonoBehaviour
 {
     [SerializeField] protected int Damage;
     [SerializeField] protected string Message;
-    [SerializeField] protected string EnemyName;
+    [SerializeField] protected string Name;
+
+    public void OnEnable()
+    {
+        Debug.LogFormat($"{Message} - an {Name} entered the arena.");
+    }
 
     public virtual void Attack()
     {
-        Debug.LogFormat($"{Message}! {EnemyName} attacks for {Damage} HP.");
+        Debug.LogFormat($"{Name} attacks for {Damage} HP!");
     }
 }

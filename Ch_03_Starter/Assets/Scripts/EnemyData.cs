@@ -6,17 +6,17 @@ public class EnemyData
 {
     public int Damage;
     public string Message;
-    public string EnemyName;
+    public string Name;
 
     public EnemyData(int dmg, string msg, string name)
     {
         this.Damage = dmg;
         this.Message = msg;
-        this.EnemyName = name;
+        this.Name = name;
     }
 
     public void Print()
     {
-        Debug.LogFormat($"{Message}! {EnemyName} can hit for {Damage} HP.");
+        Debug.LogFormat($"{Message}! {Name} can hit for {Damage} HP.");
     }
 }

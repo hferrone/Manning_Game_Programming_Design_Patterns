@@ -112,4 +112,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 25
   Message: To Arms
-  EnemyName: Ash Knight
+  Name: Ash Knight

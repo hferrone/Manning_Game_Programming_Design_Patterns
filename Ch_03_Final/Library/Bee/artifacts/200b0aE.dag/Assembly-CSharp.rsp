@@ -321,11 +321,13 @@
 -r:"Library/Bee/artifacts/200b0aE.dag/VSSettingsProvider.ref.dll"
 "Assets/Scripts/AshKnight.cs"
 "Assets/Scripts/BaseEnemy.cs"
-"Assets/Scripts/EnemyData.cs"
+"Assets/Scripts/Clone.cs"
+"Assets/Scripts/ComponentSpawner.cs"
+"Assets/Scripts/DataSpawner.cs"
+"Assets/Scripts/Enemy.cs"
+"Assets/Scripts/Factory.cs"
 "Assets/Scripts/Ogre.cs"
-"Assets/Scripts/PrototypeComponent.cs"
-"Assets/Scripts/PrototypeSpawner.cs"
-"Assets/Scripts/Serpent.cs"
+"Assets/Scripts/PrefabSpawner.cs"
 -langversion:8.0
 
 /deterministic
