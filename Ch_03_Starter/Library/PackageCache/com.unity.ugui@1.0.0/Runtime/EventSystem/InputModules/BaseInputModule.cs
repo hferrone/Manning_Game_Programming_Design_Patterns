@@ -186,8 +186,8 @@ namespace UnityEngine.EventSystems
         }
 
         // walk up the tree till a common root between the last entered and the current entered is found
-        // send exit events up to (but not inluding) the common root. Then send enter events up to
-        // (but not including the common root).
+        // send exit events up to (including) the common root. Then send enter events up to
+        // (including) the common root.
         // Send move events before exit, after enter, and on hovered objects when pointer data has changed.
         protected void HandlePointerExitAndEnter(PointerEventData currentPointerData, GameObject newEnterTarget)
         {
@@ -235,13 +235,13 @@ namespace UnityEngine.EventSystems
 
                 while (t != null)
                 {
-                    // if we reach the common root break out!
-                    if (commonRoot != null && commonRoot.transform == t)
-                        break;
-
                     ExecuteEvents.Execute(t.gameObject, currentPointerData, ExecuteEvents.pointerMoveHandler);
                     ExecuteEvents.Execute(t.gameObject, currentPointerData, ExecuteEvents.pointerExitHandler);
                     currentPointerData.hovered.Remove(t.gameObject);
+
+                    // if we reach the common root break out!
+                    if (commonRoot != null && commonRoot.transform == t)
+                        break;
                     t = t.parent;
                 }
             }
@@ -252,11 +252,14 @@ namespace UnityEngine.EventSystems
             {
                 Transform t = newEnterTarget.transform;
 
-                while (t != null && t.gameObject != commonRoot)
+                while (t != null)
                 {
                     ExecuteEvents.Execute(t.gameObject, currentPointerData, ExecuteEvents.pointerEnterHandler);
                     ExecuteEvents.Execute(t.gameObject, currentPointerData, ExecuteEvents.pointerMoveHandler);
                     currentPointerData.hovered.Add(t.gameObject);
+
+                    if (commonRoot != null && commonRoot.transform == t)
+                        break;
                     t = t.parent;
                 }
             }

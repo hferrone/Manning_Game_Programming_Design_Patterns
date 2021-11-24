@@ -424,6 +424,9 @@ namespace UnityEngine.UI
 
                         float change = axisCoordinate < 0 ? size : -size;
                         value += reverseValue ? change : -change;
+                        value = Mathf.Clamp01(value);
+                        // Only keep 4 decimals of precision
+                        value = Mathf.Round(value * 10000f) / 10000f;
                     }
                 }
                 yield return new WaitForEndOfFrame();

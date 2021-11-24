@@ -3,8 +3,6 @@ using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
-using UnityEditor.Experimental.SceneManagement;
 
 namespace UnityEditor.UI
 {

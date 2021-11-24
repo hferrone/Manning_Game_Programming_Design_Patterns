@@ -117,6 +117,8 @@ namespace UnityEditor.UI
 
         protected override void OnDisable()
         {
+            base.OnDisable();
+
             m_ShowType.valueChanged.RemoveListener(Repaint);
             m_ShowSlicedOrTiled.valueChanged.RemoveListener(Repaint);
             m_ShowSliced.valueChanged.RemoveListener(Repaint);

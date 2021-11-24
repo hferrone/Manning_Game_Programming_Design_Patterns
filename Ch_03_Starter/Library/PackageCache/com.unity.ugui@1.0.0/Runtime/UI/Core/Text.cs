@@ -584,13 +584,19 @@ namespace UnityEngine.UI
 #if UNITY_EDITOR
         protected override void Reset()
         {
-            AssignDefaultFont();
+            AssignDefaultFontIfNecessary();
         }
 
 #endif
         internal void AssignDefaultFont()
         {
             font = Resources.GetBuiltinResource<Font>("Arial.ttf");
+        }
+
+        internal void AssignDefaultFontIfNecessary()
+        {
+            if (font == null)
+                font = Resources.GetBuiltinResource<Font>("Arial.ttf");
         }
 
         /// <summary>

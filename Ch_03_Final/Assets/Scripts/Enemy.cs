@@ -40,10 +40,10 @@ public class Enemy : IPrototype
 
     public IPrototype DeepClone()
     {
-        Enemy newProrotype = (Enemy)ShallowClone();
-        newProrotype.Item = new Item(this.Item.Name);
+        Enemy newPrototype = (Enemy)ShallowClone();
+        newPrototype.Item = new Item(this.Item.Name);
 
-        return newProrotype;
+        return newPrototype;
     }
 
     public IPrototype ShallowClone()

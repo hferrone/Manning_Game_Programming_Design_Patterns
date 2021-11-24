@@ -5,29 +5,29 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637709021030000000
-    m_Hash: 469728748
+      ticks: 637733845290000000
+    m_Hash: 982840144
   m_LockFileStatus:
     m_FilePath: /Users/harrisonferrone/Desktop/Manning_Game_Design_Patterns_In_Unity/Ch_03_Starter/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637709021030000000
-    m_Hash: 1701516785
+      ticks: 637733845290000000
+    m_Hash: 1718385645
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
   m_LocalFileStatus: []
 m_ProjectPath: /Users/harrisonferrone/Desktop/Manning_Game_Design_Patterns_In_Unity/Ch_03_Starter/Packages
-m_EditorVersion: 2021.1.13f1 (a03098edbbe0)
+m_EditorVersion: 2021.2.2f1 (5e2b1e92c7f8)
 m_ResolvedPackages:
-- packageId: com.unity.collab-proxy@1.5.7
+- packageId: com.unity.collab-proxy@1.13.5
   testable: 0
   isDirectDependency: 1
-  version: 1.5.7
+  version: 1.13.5
   source: 1
-  resolvedPath: /Users/harrisonferrone/Desktop/Manning_Game_Design_Patterns_In_Unity/Ch_03_Starter/Library/PackageCache/com.unity.collab-proxy@1.5.7
+  resolvedPath: /Users/harrisonferrone/Desktop/Manning_Game_Design_Patterns_In_Unity/Ch_03_Starter/Library/PackageCache/com.unity.collab-proxy@1.13.5
   assetPath: Packages/com.unity.collab-proxy
   name: com.unity.collab-proxy
   displayName: Version Control
@@ -73,7 +73,9 @@ m_ResolvedPackages:
     - 1.12.5
     - 1.13.5
     - 1.14.1
+    - 1.14.4
     - 1.15.1
+    - 1.15.4
     - 2.0.0-preview.6
     - 2.0.0-preview.8
     - 2.0.0-preview.15
@@ -85,17 +87,11 @@ m_ResolvedPackages:
     - 2.1.0-preview.5
     - 2.1.0-preview.6
     compatible:
-    - 1.5.7
-    - 1.6.0
-    - 1.7.1
-    - 1.8.0
-    - 1.9.0
-    - 1.10.2
-    - 1.11.2
-    - 1.12.5
     - 1.13.5
     - 1.14.1
+    - 1.14.4
     - 1.15.1
+    - 1.15.4
     - 2.0.0-preview.6
     - 2.0.0-preview.8
     - 2.0.0-preview.15
@@ -106,24 +102,33 @@ m_ResolvedPackages:
     - 2.1.0-preview.3
     - 2.1.0-preview.5
     - 2.1.0-preview.6
-    verified: 1.5.7
+    verified: 1.13.5
   dependencies:
   - name: com.unity.nuget.newtonsoft-json
     version: 2.0.0
+  - name: com.unity.services.core
+    version: 1.0.1
   resolvedDependencies:
   - name: com.unity.nuget.newtonsoft-json
     version: 2.0.0
+  - name: com.unity.services.core
+    version: 1.0.1
+  - name: com.unity.modules.unitywebrequest
+    version: 1.0.0
   keywords:
-  - vsc
-  - version
-  - control
-  - collab
-  - collaboration
-  - collaborate
-  - teams
-  - team
-  - cloud
   - backup
+  - cloud
+  - collab
+  - collaborate
+  - collaboration
+  - control
+  - plastic
+  - plasticscm
+  - source
+  - team
+  - teams
+  - version
+  - vcs
   registry:
     id: main
     name: 
@@ -133,19 +138,17 @@ m_ResolvedPackages:
     capabilities: 7
   hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 637551413290000000
+  datePublishedTicks: 637685076530000000
   documentationUrl: 
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.cloud.collaborate.git
-    revision: f079d307344f568804d3ea6d781013135e614e45
+    revision: 4001806dc89b25276d1382d5abffd71731b030e5
     path: 
   unityLifecycle:
-    version: 1.5.7
+    version: 1.13.5
     nextVersion: 
 - packageId: com.unity.ide.rider@3.0.7
   testable: 0
@@ -213,8 +216,6 @@ m_ResolvedPackages:
     capabilities: 7
   hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 637572251600000000
   documentationUrl: 
@@ -227,12 +228,12 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 3.0.7
     nextVersion: 
-- packageId: com.unity.ide.visualstudio@2.0.11
+- packageId: com.unity.ide.visualstudio@2.0.12
   testable: 0
   isDirectDependency: 1
-  version: 2.0.11
+  version: 2.0.12
   source: 1
-  resolvedPath: /Users/harrisonferrone/Desktop/Manning_Game_Design_Patterns_In_Unity/Ch_03_Starter/Library/PackageCache/com.unity.ide.visualstudio@2.0.11
+  resolvedPath: /Users/harrisonferrone/Desktop/Manning_Game_Design_Patterns_In_Unity/Ch_03_Starter/Library/PackageCache/com.unity.ide.visualstudio@2.0.12
   assetPath: Packages/com.unity.ide.visualstudio
   name: com.unity.ide.visualstudio
   displayName: Visual Studio Editor
@@ -264,16 +265,17 @@ m_ResolvedPackages:
     - 2.0.8
     - 2.0.9
     - 2.0.11
+    - 2.0.12
     compatible:
-    - 2.0.9
     - 2.0.11
-    verified: 2.0.11
+    - 2.0.12
+    verified: 2.0.12
   dependencies:
   - name: com.unity.test-framework
     version: 1.1.9
   resolvedDependencies:
   - name: com.unity.test-framework
-    version: 1.1.26
+    version: 1.1.29
   - name: com.unity.ext.nunit
     version: 1.0.6
   - name: com.unity.modules.imgui
@@ -290,19 +292,17 @@ m_ResolvedPackages:
     capabilities: 7
   hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 637613656180000000
+  datePublishedTicks: 637720564750000000
   documentationUrl: 
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.ide.visualstudio.git
-    revision: 680e06d94ffca728223ae2cb14bb919cd354e2c1
+    revision: 8d436ff053b9c59677b5e9799208143553cd02d9
     path: 
   unityLifecycle:
-    version: 2.0.9
+    version: 2.0.11
     nextVersion: 
 - packageId: com.unity.ide.vscode@1.2.4
   testable: 0
@@ -339,7 +339,6 @@ m_ResolvedPackages:
     - 1.2.3
     - 1.2.4
     compatible:
-    - 1.2.3
     - 1.2.4
     verified: 1.2.4
   dependencies: []
@@ -354,8 +353,6 @@ m_ResolvedPackages:
     capabilities: 7
   hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 637660806170000000
   documentationUrl: 
@@ -366,14 +363,14 @@ m_ResolvedPackages:
     revision: 1f4f605d5c988cb610c372b5c5216c46cc8f5d30
     path: 
   unityLifecycle:
-    version: 1.2.3
+    version: 1.2.4
     nextVersion: 
-- packageId: com.unity.test-framework@1.1.26
+- packageId: com.unity.test-framework@1.1.29
   testable: 0
   isDirectDependency: 1
-  version: 1.1.26
+  version: 1.1.29
   source: 1
-  resolvedPath: /Users/harrisonferrone/Desktop/Manning_Game_Design_Patterns_In_Unity/Ch_03_Starter/Library/PackageCache/com.unity.test-framework@1.1.26
+  resolvedPath: /Users/harrisonferrone/Desktop/Manning_Game_Design_Patterns_In_Unity/Ch_03_Starter/Library/PackageCache/com.unity.test-framework@1.1.29
   assetPath: Packages/com.unity.test-framework
   name: com.unity.test-framework
   displayName: Test Framework
@@ -421,8 +418,6 @@ m_ResolvedPackages:
     - 1.1.29
     - 1.1.30
     compatible:
-    - 1.1.26
-    - 1.1.27
     - 1.1.29
     - 1.1.30
     verified: 1.1.30
@@ -452,19 +447,17 @@ m_ResolvedPackages:
     capabilities: 7
   hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 637576439750000000
+  datePublishedTicks: 637647922650000000
   documentationUrl: 
   hasRepository: 1
   repository:
     type: git
     url: git+https://github.com/Unity-Technologies/com.unity.test-framework.git
-    revision: ea9d07e64e6d63c4f2fd8b6bc57df0f452ff4fae
+    revision: dac53542acdab7a12e9ebf111ac588d0e53cf483
     path: 
   unityLifecycle:
-    version: 1.1.26
+    version: 1.1.29
     nextVersion: 
 - packageId: com.unity.textmeshpro@3.0.6
   testable: 0
@@ -566,6 +559,7 @@ m_ResolvedPackages:
     - 2.1.5
     - 2.1.6
     - 2.2.0-preview.1
+    - 2.2.0-preview.2
     - 3.0.0-preview.1
     - 3.0.0-preview.3
     - 3.0.0-preview.4
@@ -584,9 +578,12 @@ m_ResolvedPackages:
     - 3.0.5
     - 3.0.6
     - 3.2.0-pre.1
+    - 3.2.0-pre.2
+    - 4.0.0-pre.1
     compatible:
     - 3.0.6
     - 3.2.0-pre.1
+    - 3.2.0-pre.2
     verified: 3.0.6
   dependencies:
   - name: com.unity.ugui
@@ -613,8 +610,6 @@ m_ResolvedPackages:
     capabilities: 7
   hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 637547111200000000
   documentationUrl: 
@@ -627,12 +622,12 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 3.0.6
     nextVersion: 
-- packageId: com.unity.timeline@1.5.5
+- packageId: com.unity.timeline@1.6.2
   testable: 0
   isDirectDependency: 1
-  version: 1.5.5
+  version: 1.6.2
   source: 1
-  resolvedPath: /Users/harrisonferrone/Desktop/Manning_Game_Design_Patterns_In_Unity/Ch_03_Starter/Library/PackageCache/com.unity.timeline@1.5.5
+  resolvedPath: /Users/harrisonferrone/Desktop/Manning_Game_Design_Patterns_In_Unity/Ch_03_Starter/Library/PackageCache/com.unity.timeline@1.6.2
   assetPath: Packages/com.unity.timeline
   name: com.unity.timeline
   displayName: Timeline
@@ -715,18 +710,12 @@ m_ResolvedPackages:
     - 1.6.1
     - 1.6.2
     - 1.6.3
+    - 1.7.0-pre.1
     compatible:
-    - 1.5.5
-    - 1.5.6
-    - 1.5.7
-    - 1.6.0-pre.1
-    - 1.6.0-pre.3
-    - 1.6.0-pre.4
-    - 1.6.0-pre.5
-    - 1.6.1
     - 1.6.2
     - 1.6.3
-    verified: 1.5.7
+    - 1.7.0-pre.1
+    verified: 1.6.3
   dependencies:
   - name: com.unity.modules.director
     version: 1.0.0
@@ -760,19 +749,17 @@ m_ResolvedPackages:
     capabilities: 7
   hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 637557616440000000
+  datePublishedTicks: 637643657750000000
   documentationUrl: 
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.timeline.git
-    revision: 4bb067f24973c7cfa1e4a453615e43083ce6855d
+    revision: d0d66dff04e2ee077546a894ea0af2b750055b32
     path: 
   unityLifecycle:
-    version: 1.5.5
+    version: 1.6.2
     nextVersion: 
 - packageId: com.unity.ugui@1.0.0
   testable: 0
@@ -817,16 +804,14 @@ m_ResolvedPackages:
   - Unity UI
   - Canvas
   registry:
-    id: 
+    id: main
     name: 
-    url: 
+    url: https://packages.unity.com
     scopes: []
-    isDefault: 0
-    capabilities: 0
-  hasRegistry: 0
+    isDefault: 1
+    capabilities: 7
+  hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -839,12 +824,12 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 1.0.0
     nextVersion: 
-- packageId: com.unity.visualscripting@1.6.1
+- packageId: com.unity.visualscripting@1.7.5
   testable: 0
   isDirectDependency: 1
-  version: 1.6.1
+  version: 1.7.5
   source: 1
-  resolvedPath: /Users/harrisonferrone/Desktop/Manning_Game_Design_Patterns_In_Unity/Ch_03_Starter/Library/PackageCache/com.unity.visualscripting@1.6.1
+  resolvedPath: /Users/harrisonferrone/Desktop/Manning_Game_Design_Patterns_In_Unity/Ch_03_Starter/Library/PackageCache/com.unity.visualscripting@1.7.5
   assetPath: Packages/com.unity.visualscripting
   name: com.unity.visualscripting
   displayName: Visual Scripting
@@ -854,13 +839,18 @@ m_ResolvedPackages:
     url: 
   category: 
   type: 
-  description: "Visual Scripting, previously known as BOLT, is an alternative workflow
-    to design behaviours. Instead of the classic method of writing a C# script, visual
-    scripting offers a way to design behaviours intuitively without code, by connecting
-    events, actions, and data together in a graph. \n\nBoth programmers and non-programmers
-    can use node-based graphs to design final logic or to quickly create prototypes.
-    This package also features an API that programmers can use for more advanced
-    tasks, or to create custom nodes that can be used by other team members."
+  description: 'Visual scripting is a workflow that uses visual, node-based graphs
+    to design behaviors rather than write lines of C# script.
+
+
+    Enabling artists,
+    designers and programmers alike, visual scripting can be used to design final
+    logic, quickly create prototypes, iterate on gameplay and create custom nodes
+    to help streamline collaboration.
+
+
+    Visual scripting is compatible with third-party
+    APIs, including most packages, assets and custom libraries.'
   status: 4
   errors: []
   versions:
@@ -877,28 +867,16 @@ m_ResolvedPackages:
     - 1.7.2
     - 1.7.3
     - 1.7.5
+    - 1.7.6
     - 1.8.0-pre.1
     compatible:
-    - 1.6.1
-    - 1.7.1
-    - 1.7.2
-    - 1.7.3
     - 1.7.5
-    verified: 1.6.1
+    - 1.7.6
+    verified: 1.7.6
   dependencies:
   - name: com.unity.ugui
     version: 1.0.0
-  - name: com.unity.modules.ai
-    version: 1.0.0
-  - name: com.unity.modules.animation
-    version: 1.0.0
   - name: com.unity.modules.jsonserialize
-    version: 1.0.0
-  - name: com.unity.modules.particlesystem
-    version: 1.0.0
-  - name: com.unity.modules.physics
-    version: 1.0.0
-  - name: com.unity.modules.physics2d
     version: 1.0.0
   resolvedDependencies:
   - name: com.unity.ugui
@@ -907,17 +885,7 @@ m_ResolvedPackages:
     version: 1.0.0
   - name: com.unity.modules.imgui
     version: 1.0.0
-  - name: com.unity.modules.ai
-    version: 1.0.0
-  - name: com.unity.modules.animation
-    version: 1.0.0
   - name: com.unity.modules.jsonserialize
-    version: 1.0.0
-  - name: com.unity.modules.particlesystem
-    version: 1.0.0
-  - name: com.unity.modules.physics
-    version: 1.0.0
-  - name: com.unity.modules.physics2d
     version: 1.0.0
   keywords: []
   registry:
@@ -929,19 +897,17 @@ m_ResolvedPackages:
     capabilities: 7
   hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 637547228050000000
+  datePublishedTicks: 637702395950000000
   documentationUrl: 
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.visualscripting.git
-    revision: d2dc8205ed231b4fc18289dddb14c0a92c76154f
+    revision: 92f3faf93c43d4d12ab8258dedff1ec23db47872
     path: 
   unityLifecycle:
-    version: 1.6.1
+    version: 1.7.5
     nextVersion: 
 - packageId: com.unity.modules.ai@1.0.0
   testable: 0
@@ -972,16 +938,14 @@ m_ResolvedPackages:
   resolvedDependencies: []
   keywords: []
   registry:
-    id: 
+    id: main
     name: 
-    url: 
+    url: https://packages.unity.com
     scopes: []
-    isDefault: 0
-    capabilities: 0
-  hasRegistry: 0
+    isDefault: 1
+    capabilities: 7
+  hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -1022,16 +986,14 @@ m_ResolvedPackages:
   resolvedDependencies: []
   keywords: []
   registry:
-    id: 
+    id: main
     name: 
-    url: 
+    url: https://packages.unity.com
     scopes: []
-    isDefault: 0
-    capabilities: 0
-  hasRegistry: 0
+    isDefault: 1
+    capabilities: 7
+  hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -1073,16 +1035,14 @@ m_ResolvedPackages:
   resolvedDependencies: []
   keywords: []
   registry:
-    id: 
+    id: main
     name: 
-    url: 
+    url: https://packages.unity.com
     scopes: []
-    isDefault: 0
-    capabilities: 0
-  hasRegistry: 0
+    isDefault: 1
+    capabilities: 7
+  hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -1124,16 +1084,14 @@ m_ResolvedPackages:
   resolvedDependencies: []
   keywords: []
   registry:
-    id: 
+    id: main
     name: 
-    url: 
+    url: https://packages.unity.com
     scopes: []
-    isDefault: 0
-    capabilities: 0
-  hasRegistry: 0
+    isDefault: 1
+    capabilities: 7
+  hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -1175,16 +1133,14 @@ m_ResolvedPackages:
   resolvedDependencies: []
   keywords: []
   registry:
-    id: 
+    id: main
     name: 
-    url: 
+    url: https://packages.unity.com
     scopes: []
-    isDefault: 0
-    capabilities: 0
-  hasRegistry: 0
+    isDefault: 1
+    capabilities: 7
+  hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -1230,16 +1186,14 @@ m_ResolvedPackages:
     version: 1.0.0
   keywords: []
   registry:
-    id: 
+    id: main
     name: 
-    url: 
+    url: https://packages.unity.com
     scopes: []
-    isDefault: 0
-    capabilities: 0
-  hasRegistry: 0
+    isDefault: 1
+    capabilities: 7
+  hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -1289,16 +1243,14 @@ m_ResolvedPackages:
     version: 1.0.0
   keywords: []
   registry:
-    id: 
+    id: main
     name: 
-    url: 
+    url: https://packages.unity.com
     scopes: []
-    isDefault: 0
-    capabilities: 0
-  hasRegistry: 0
+    isDefault: 1
+    capabilities: 7
+  hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -1341,16 +1293,14 @@ m_ResolvedPackages:
   resolvedDependencies: []
   keywords: []
   registry:
-    id: 
+    id: main
     name: 
-    url: 
+    url: https://packages.unity.com
     scopes: []
-    isDefault: 0
-    capabilities: 0
-  hasRegistry: 0
+    isDefault: 1
+    capabilities: 7
+  hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -1392,16 +1342,14 @@ m_ResolvedPackages:
   resolvedDependencies: []
   keywords: []
   registry:
-    id: 
+    id: main
     name: 
-    url: 
+    url: https://packages.unity.com
     scopes: []
-    isDefault: 0
-    capabilities: 0
-  hasRegistry: 0
+    isDefault: 1
+    capabilities: 7
+  hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -1443,16 +1391,14 @@ m_ResolvedPackages:
   resolvedDependencies: []
   keywords: []
   registry:
-    id: 
+    id: main
     name: 
-    url: 
+    url: https://packages.unity.com
     scopes: []
-    isDefault: 0
-    capabilities: 0
-  hasRegistry: 0
+    isDefault: 1
+    capabilities: 7
+  hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -1494,16 +1440,14 @@ m_ResolvedPackages:
   resolvedDependencies: []
   keywords: []
   registry:
-    id: 
+    id: main
     name: 
-    url: 
+    url: https://packages.unity.com
     scopes: []
-    isDefault: 0
-    capabilities: 0
-  hasRegistry: 0
+    isDefault: 1
+    capabilities: 7
+  hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -1545,16 +1489,14 @@ m_ResolvedPackages:
   resolvedDependencies: []
   keywords: []
   registry:
-    id: 
+    id: main
     name: 
-    url: 
+    url: https://packages.unity.com
     scopes: []
-    isDefault: 0
-    capabilities: 0
-  hasRegistry: 0
+    isDefault: 1
+    capabilities: 7
+  hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -1596,16 +1538,14 @@ m_ResolvedPackages:
   resolvedDependencies: []
   keywords: []
   registry:
-    id: 
+    id: main
     name: 
-    url: 
+    url: https://packages.unity.com
     scopes: []
-    isDefault: 0
-    capabilities: 0
-  hasRegistry: 0
+    isDefault: 1
+    capabilities: 7
+  hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -1651,16 +1591,14 @@ m_ResolvedPackages:
     version: 1.0.0
   keywords: []
   registry:
-    id: 
+    id: main
     name: 
-    url: 
+    url: https://packages.unity.com
     scopes: []
-    isDefault: 0
-    capabilities: 0
-  hasRegistry: 0
+    isDefault: 1
+    capabilities: 7
+  hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -1702,16 +1640,14 @@ m_ResolvedPackages:
   resolvedDependencies: []
   keywords: []
   registry:
-    id: 
+    id: main
     name: 
-    url: 
+    url: https://packages.unity.com
     scopes: []
-    isDefault: 0
-    capabilities: 0
-  hasRegistry: 0
+    isDefault: 1
+    capabilities: 7
+  hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -1761,16 +1697,14 @@ m_ResolvedPackages:
     version: 1.0.0
   keywords: []
   registry:
-    id: 
+    id: main
     name: 
-    url: 
+    url: https://packages.unity.com
     scopes: []
-    isDefault: 0
-    capabilities: 0
-  hasRegistry: 0
+    isDefault: 1
+    capabilities: 7
+  hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -1815,16 +1749,14 @@ m_ResolvedPackages:
     version: 1.0.0
   keywords: []
   registry:
-    id: 
+    id: main
     name: 
-    url: 
+    url: https://packages.unity.com
     scopes: []
-    isDefault: 0
-    capabilities: 0
-  hasRegistry: 0
+    isDefault: 1
+    capabilities: 7
+  hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -1866,16 +1798,14 @@ m_ResolvedPackages:
   resolvedDependencies: []
   keywords: []
   registry:
-    id: 
+    id: main
     name: 
-    url: 
+    url: https://packages.unity.com
     scopes: []
-    isDefault: 0
-    capabilities: 0
-  hasRegistry: 0
+    isDefault: 1
+    capabilities: 7
+  hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -1933,16 +1863,14 @@ m_ResolvedPackages:
     version: 1.0.0
   keywords: []
   registry:
-    id: 
+    id: main
     name: 
-    url: 
+    url: https://packages.unity.com
     scopes: []
-    isDefault: 0
-    capabilities: 0
-  hasRegistry: 0
+    isDefault: 1
+    capabilities: 7
+  hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -1984,16 +1912,14 @@ m_ResolvedPackages:
   resolvedDependencies: []
   keywords: []
   registry:
-    id: 
+    id: main
     name: 
-    url: 
+    url: https://packages.unity.com
     scopes: []
-    isDefault: 0
-    capabilities: 0
-  hasRegistry: 0
+    isDefault: 1
+    capabilities: 7
+  hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -2043,16 +1969,14 @@ m_ResolvedPackages:
     version: 1.0.0
   keywords: []
   registry:
-    id: 
+    id: main
     name: 
-    url: 
+    url: https://packages.unity.com
     scopes: []
-    isDefault: 0
-    capabilities: 0
-  hasRegistry: 0
+    isDefault: 1
+    capabilities: 7
+  hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -2094,16 +2018,14 @@ m_ResolvedPackages:
   resolvedDependencies: []
   keywords: []
   registry:
-    id: 
+    id: main
     name: 
-    url: 
+    url: https://packages.unity.com
     scopes: []
-    isDefault: 0
-    capabilities: 0
-  hasRegistry: 0
+    isDefault: 1
+    capabilities: 7
+  hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -2153,16 +2075,14 @@ m_ResolvedPackages:
     version: 1.0.0
   keywords: []
   registry:
-    id: 
+    id: main
     name: 
-    url: 
+    url: https://packages.unity.com
     scopes: []
-    isDefault: 0
-    capabilities: 0
-  hasRegistry: 0
+    isDefault: 1
+    capabilities: 7
+  hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -2212,16 +2132,14 @@ m_ResolvedPackages:
     version: 1.0.0
   keywords: []
   registry:
-    id: 
+    id: main
     name: 
-    url: 
+    url: https://packages.unity.com
     scopes: []
-    isDefault: 0
-    capabilities: 0
-  hasRegistry: 0
+    isDefault: 1
+    capabilities: 7
+  hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -2271,16 +2189,14 @@ m_ResolvedPackages:
     version: 1.0.0
   keywords: []
   registry:
-    id: 
+    id: main
     name: 
-    url: 
+    url: https://packages.unity.com
     scopes: []
-    isDefault: 0
-    capabilities: 0
-  hasRegistry: 0
+    isDefault: 1
+    capabilities: 7
+  hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -2346,16 +2262,14 @@ m_ResolvedPackages:
     version: 1.0.0
   keywords: []
   registry:
-    id: 
+    id: main
     name: 
-    url: 
+    url: https://packages.unity.com
     scopes: []
-    isDefault: 0
-    capabilities: 0
-  hasRegistry: 0
+    isDefault: 1
+    capabilities: 7
+  hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -2401,16 +2315,14 @@ m_ResolvedPackages:
     version: 1.0.0
   keywords: []
   registry:
-    id: 
+    id: main
     name: 
-    url: 
+    url: https://packages.unity.com
     scopes: []
-    isDefault: 0
-    capabilities: 0
-  hasRegistry: 0
+    isDefault: 1
+    capabilities: 7
+  hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -2464,16 +2376,14 @@ m_ResolvedPackages:
     version: 1.0.0
   keywords: []
   registry:
-    id: 
+    id: main
     name: 
-    url: 
+    url: https://packages.unity.com
     scopes: []
-    isDefault: 0
-    capabilities: 0
-  hasRegistry: 0
+    isDefault: 1
+    capabilities: 7
+  hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -2529,16 +2439,14 @@ m_ResolvedPackages:
     version: 1.0.0
   keywords: []
   registry:
-    id: 
+    id: main
     name: 
-    url: 
+    url: https://packages.unity.com
     scopes: []
-    isDefault: 0
-    capabilities: 0
-  hasRegistry: 0
+    isDefault: 1
+    capabilities: 7
+  hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -2580,16 +2488,14 @@ m_ResolvedPackages:
   resolvedDependencies: []
   keywords: []
   registry:
-    id: 
+    id: main
     name: 
-    url: 
+    url: https://packages.unity.com
     scopes: []
-    isDefault: 0
-    capabilities: 0
-  hasRegistry: 0
+    isDefault: 1
+    capabilities: 7
+  hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -2643,16 +2549,14 @@ m_ResolvedPackages:
     version: 1.0.0
   keywords: []
   registry:
-    id: 
+    id: main
     name: 
-    url: 
+    url: https://packages.unity.com
     scopes: []
-    isDefault: 0
-    capabilities: 0
-  hasRegistry: 0
+    isDefault: 1
+    capabilities: 7
+  hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -2698,16 +2602,14 @@ m_ResolvedPackages:
     version: 1.0.0
   keywords: []
   registry:
-    id: 
+    id: main
     name: 
-    url: 
+    url: https://packages.unity.com
     scopes: []
-    isDefault: 0
-    capabilities: 0
-  hasRegistry: 0
+    isDefault: 1
+    capabilities: 7
+  hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -2760,16 +2662,14 @@ m_ResolvedPackages:
     version: 1.0.0
   keywords: []
   registry:
-    id: 
+    id: main
     name: 
-    url: 
+    url: https://packages.unity.com
     scopes: []
-    isDefault: 0
-    capabilities: 0
-  hasRegistry: 0
+    isDefault: 1
+    capabilities: 7
+  hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -2827,8 +2727,6 @@ m_ResolvedPackages:
     capabilities: 7
   hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 637429759280000000
   documentationUrl: 
@@ -2898,8 +2796,6 @@ m_ResolvedPackages:
     capabilities: 7
   hasRegistry: 1
   hideInEditor: 1
-  entitlements:
-    isAllowed: 1
   isAssetStorePackage: 0
   datePublishedTicks: 637237898320000000
   documentationUrl: 
@@ -2912,3 +2808,69 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 2.0.0
     nextVersion: 
+- packageId: com.unity.services.core@1.0.1
+  testable: 0
+  isDirectDependency: 0
+  version: 1.0.1
+  source: 1
+  resolvedPath: /Users/harrisonferrone/Desktop/Manning_Game_Design_Patterns_In_Unity/Ch_03_Starter/Library/PackageCache/com.unity.services.core@1.0.1
+  assetPath: Packages/com.unity.services.core
+  name: com.unity.services.core
+  displayName: Services Core
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: 
+  description: 'This package defines common components used by multiple Game Service
+    packages.
+
+    These are standardized and aim to unify the overall experience
+    of working with Game Services packages.'
+  status: 4
+  errors: []
+  versions:
+    all:
+    - 1.0.1
+    - 1.1.0-pre.7
+    - 1.1.0-pre.8
+    - 1.1.0-pre.9
+    - 1.1.0-pre.10
+    - 1.1.0-pre.11
+    compatible:
+    - 1.0.1
+    - 1.1.0-pre.7
+    - 1.1.0-pre.8
+    - 1.1.0-pre.9
+    - 1.1.0-pre.10
+    - 1.1.0-pre.11
+    verified: 1.0.1
+  dependencies:
+  - name: com.unity.modules.unitywebrequest
+    version: 1.0.0
+  resolvedDependencies:
+  - name: com.unity.modules.unitywebrequest
+    version: 1.0.0
+  keywords: []
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+  hasRegistry: 1
+  hideInEditor: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 637604883250000000
+  documentationUrl: 
+  hasRepository: 1
+  repository:
+    type: git
+    url: https://github.cds.internal.unity3d.com/unity/operate-services-sdk.git
+    revision: 4cd880d4fd5c60597629249bf4f324e4c8d7aa2e
+    path: 
+  unityLifecycle:
+    version: 1.0.1
+    nextVersion: 1.1.0-pre.8

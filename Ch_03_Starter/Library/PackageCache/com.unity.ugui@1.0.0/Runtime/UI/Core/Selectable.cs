@@ -440,7 +440,7 @@ namespace UnityEngine.UI
                 {
                     // if the parent group does not allow interaction
                     // we need to break
-                    if (!m_CanvasGroupCache[i].interactable)
+                    if (m_CanvasGroupCache[i].enabled && !m_CanvasGroupCache[i].interactable)
                     {
                         groupAllowInteraction = false;
                         shouldBreak = true;
@@ -514,6 +514,12 @@ namespace UnityEngine.UI
                 Array.Copy(s_Selectables, temp, s_Selectables.Length);
                 s_Selectables = temp;
             }
+
+            if (EventSystem.current && EventSystem.current.currentSelectedGameObject == gameObject)
+            {
+                hasSelection = true;
+            }
+
             m_CurrentIndex = s_SelectableCount;
             s_Selectables[m_CurrentIndex] = this;
             s_SelectableCount++;
@@ -565,6 +571,14 @@ namespace UnityEngine.UI
             m_EnableCalled = false;
         }
 
+        void OnApplicationFocus(bool hasFocus)
+        {
+            if (!hasFocus && IsPressed())
+            {
+                InstantClearState();
+            }
+        }
+
 #if UNITY_EDITOR
         protected override void OnValidate()
         {
@@ -605,10 +619,10 @@ namespace UnityEngine.UI
                     return SelectionState.Disabled;
                 if (isPointerDown)
                     return SelectionState.Pressed;
-                if (isPointerInside)
-                    return SelectionState.Highlighted;
                 if (hasSelection)
                     return SelectionState.Selected;
+                if (isPointerInside)
+                    return SelectionState.Highlighted;
                 return SelectionState.Normal;
             }
         }
@@ -1262,6 +1276,8 @@ namespace UnityEngine.UI
         /// </example>
         public virtual void OnPointerEnter(PointerEventData eventData)
         {
+            if (eventData == null || eventData.pointerEnter == null || eventData.pointerEnter.GetComponentInParent<Selectable>() != this)
+                return;
             isPointerInside = true;
             EvaluateAndTransitionToSelectionState();
         }
@@ -1290,6 +1306,8 @@ namespace UnityEngine.UI
         /// </example>
         public virtual void OnPointerExit(PointerEventData eventData)
         {
+            if (eventData == null || eventData.pointerEnter == null || eventData.pointerEnter.GetComponentInParent<Selectable>() != this)
+                return;
             isPointerInside = false;
             EvaluateAndTransitionToSelectionState();
         }

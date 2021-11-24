@@ -132,7 +132,9 @@ namespace UnityEngine.UI
             lbl.color = s_TextColor;
 
             // Reset() is not called when playing. We still want the default font to be assigned
-            lbl.AssignDefaultFont();
+            // We may have a font assigned from default preset. We shouldn't override it
+            if (lbl.font == null)
+                lbl.AssignDefaultFont();
         }
 
         private static void SetDefaultColorTransitionValues(Selectable slider)
