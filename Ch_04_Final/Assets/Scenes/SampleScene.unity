@@ -1080,3 +1080,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ButtonPrefab: {fileID: 2076031205502850051, guid: b70bf5847b9a2460b8673d515d04ef62, type: 3}
+  PebbleModel: {fileID: 8291855915387630708, guid: a74d3d698b7e349498be1fc30e3e191d, type: 3}
+  KnifeModel: {fileID: 3393998991735174076, guid: df1192366830c4be89fe6d7fcd4273bd, type: 3}
+  PotionModel: {fileID: 8950211348346700695, guid: 9274c3479226b4585854fa021467615c, type: 3}
