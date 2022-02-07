@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 namespace UnityEngine.UI
 {
-    [AddComponentMenu("UI/Selectable", 70)]
+    [AddComponentMenu("UI/Selectable", 35)]
     [ExecuteAlways]
     [SelectionBase]
     [DisallowMultipleComponent]

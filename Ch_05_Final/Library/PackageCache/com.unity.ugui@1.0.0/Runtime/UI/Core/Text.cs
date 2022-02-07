@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace UnityEngine.UI
 {
     [RequireComponent(typeof(CanvasRenderer))]
-    [AddComponentMenu("UI/Text", 10)]
+    [AddComponentMenu("UI/Legacy/Text", 100)]
     /// <summary>
     /// The default Graphic to draw font data to screen.
     /// </summary>

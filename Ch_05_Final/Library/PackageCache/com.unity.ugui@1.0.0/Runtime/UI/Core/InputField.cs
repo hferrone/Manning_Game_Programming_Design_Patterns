@@ -13,7 +13,7 @@ namespace UnityEngine.UI
     /// Turn a simple label into a interactable input field.
     /// </summary>
 
-    [AddComponentMenu("UI/Input Field", 31)]
+    [AddComponentMenu("UI/Legacy/Input Field", 103)]
     public class InputField
         : Selectable,
         IUpdateSelectedHandler,
