@@ -10,16 +10,12 @@ public class Client : MonoBehaviour
     private Director _director = new Director();
     private IBuilder _builder;
 
-    void Start()
-    {
-        _builder = new BomberBuilder();
-    }
-
     public void Build()
     {
         //var go = Utilities.Create("TankBody");
         //Debug.Log("Nothing to build yet...");
 
+        _builder = new TankBuilder();
         _director.ConstructWith(_builder);
         SupportAlly ally = _builder.GetAlly();
 

@@ -10,16 +10,21 @@ public enum AllyType
 
 public class SupportAlly
 {
-    public AllyType allyType { get; private set; }
+    public AllyType allyType;
+    public GameObject parent;
     public List<string> components = new List<string>();
 
     public SupportAlly(AllyType type)
     {
         allyType = type;
+        parent = new GameObject(type.ToString());
     }
 
     public void AddComponent(string name)
     {
+        GameObject go = Utilities.CreateFromSO(name);
+        go.transform.SetParent(parent.transform);
+
         components.Add(name);
     }
 

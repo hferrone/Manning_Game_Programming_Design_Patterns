@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 71165c3b4cec943e5afcdb019a029919, type: 3}
   m_Name: TankBody
-  m_EditorClassIdentifier: Assembly-CSharp::ModelDataSO
-  primitiveType: 0
-  goName: 
-  scale: {x: 0, y: 0, z: 0}
+  m_EditorClassIdentifier: 
+  primitiveType: 3
+  position: {x: -1.5, y: 1, z: -5.8}
+  scale: {x: 1, y: 1, z: 1}

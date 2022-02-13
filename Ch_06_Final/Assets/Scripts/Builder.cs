@@ -22,17 +22,17 @@ public class TankBuilder : IBuilder
 
     public void BuildFrame()
     {
-        _ally.AddComponent("Steel frame");
+        _ally.AddComponent("TankBody");
     }
 
     public void BuildMotor()
     {
-        _ally.AddComponent("Heavy treads");
+        _ally.AddComponent("TankTreads");
     }
 
     public void BuildWeapon()
     {
-        _ally.AddComponent("Mortar");
+        _ally.AddComponent("TankWeapon");
     }
 
     public SupportAlly GetAlly()
