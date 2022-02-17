@@ -7,20 +7,20 @@ public class Client : MonoBehaviour
 {
     public Text BlueprintLog;
 
-    private Director _director = new Director();
-    private IBuilder _builder;
-
     public void Build()
     {
-        //var go = Utilities.Create("TankBody");
-        //Debug.Log("Nothing to build yet...");
+        IBuilder builder = new TankBuilder();
+        var fluentAlly = builder    
+            .BuildFrame()    
+            .BuildMotor()    
+            .BuildWeapon()    
+            .GetAlly();
 
-        _builder = new TankBuilder();
-        _director.ConstructWith(_builder);
-        SupportAlly ally = _builder.GetAlly();
+        //Director director = new Director();    
 
-        //SupportAlly test = new SupportAlly(AllyType.Tank);
+        //director.ConstructWith(builder);    
+        //var ally = builder.GetAlly();    
 
-        BlueprintLog.text = ally.GetBlueprint();
+        BlueprintLog.text = fluentAlly.GetBlueprint();    
     }
 }

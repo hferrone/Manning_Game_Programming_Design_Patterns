@@ -9,8 +9,6 @@ public class Client : MonoBehaviour
 
     public void Build()
     {
-        var go = Utilities.Create("TankBody");
-
         Debug.Log("Nothing to build yet...");
     }
 }

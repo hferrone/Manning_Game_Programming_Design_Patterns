@@ -2,45 +2,40 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum AllyType
-{
-    Tank,
-    Bomber
-}
-
 public class SupportAlly
 {
-    public AllyType allyType;
+    public string allyType;    
+    public List<GameObject> components = new List<GameObject>();
     public GameObject parent;
-    public List<string> components = new List<string>();
 
-    public SupportAlly(AllyType type)
+    public SupportAlly(string newAlly)    
     {
-        allyType = type;
-        parent = new GameObject(type.ToString());
+        allyType = newAlly;
+        parent = new GameObject(newAlly);
     }
 
-    public void AddComponent(string name)
+    public void AddComponent(string name)    
     {
         GameObject go = Utilities.CreateFromSO(name);
         go.transform.SetParent(parent.transform);
-
-        components.Add(name);
+        components.Add(go);
+        Debug.Log($"{name} component added!");
     }
 
-    public string GetBlueprint()
+    public string GetBlueprint()    
     {
-        if(components.Count == 0)
+        if (components.Count == 0)    
         {
-            return "No components installed, make sure to use the Director class!";
+            return "No components listed, use the Director class!";    
         }
 
-        var blueprintLog = $"Support type: {allyType.ToString()}\n\n";
-        foreach(string component in components)
+        var blueprintLog = $"Support type: {allyType}\n\n";    
+
+        foreach (GameObject component in components)    
         {
-            blueprintLog += $"  - {component} --- installed\n";
+            blueprintLog += $" - {component.name} --- installed\n";    
         }
 
-        return blueprintLog;
+        return blueprintLog;    
     }
 }

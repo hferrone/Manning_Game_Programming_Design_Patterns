@@ -2,71 +2,77 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IBuilder
+public interface IBuilder    
 {
-    void BuildFrame();
-    void BuildMotor();
-    void BuildWeapon();
+    IBuilder BuildFrame();    
+    IBuilder BuildMotor();    
+    IBuilder BuildWeapon();    
 
-    SupportAlly GetAlly();
+    SupportAlly GetAlly();    
 }
 
-public class TankBuilder : IBuilder
+public class TankBuilder : IBuilder    
 {
-    private SupportAlly _ally;
+    private SupportAlly _ally;    
 
-    public TankBuilder()
+    public TankBuilder()    
     {
-        _ally = new SupportAlly(AllyType.Tank);
+        _ally = new SupportAlly("Tank");    
     }
 
-    public void BuildFrame()
+    public IBuilder BuildFrame()    
     {
-        _ally.AddComponent("TankBody");
+        _ally.AddComponent("Steel Frame");
+        return this;
     }
 
-    public void BuildMotor()
+    public IBuilder BuildMotor()    
     {
-        _ally.AddComponent("TankTreads");
+        _ally.AddComponent("Heavy Treads");
+        return this;
     }
 
-    public void BuildWeapon()
+    public IBuilder BuildWeapon()    
     {
-        _ally.AddComponent("TankWeapon");
+        _ally.AddComponent("Mortar");
+        return this;
     }
 
-    public SupportAlly GetAlly()
+    public SupportAlly GetAlly()    
     {
-        return _ally;
+        return _ally;   
     }
 }
 
-public class BomberBuilder : IBuilder
+public class DroneBuilder : IBuilder    
 {
-    private SupportAlly _ally;
+    private SupportAlly _ally;    
 
-    public BomberBuilder()
+    public DroneBuilder()    
     {
-        _ally = new SupportAlly(AllyType.Bomber);
+        _ally = new SupportAlly("Drone");    
     }
 
-    public void BuildFrame()
+    public IBuilder BuildFrame()
     {
-        _ally.AddComponent("Titanium hull");
+        _ally.AddComponent("Titanium Hull");
+        return this;
     }
 
-    public void BuildMotor()
+    public IBuilder BuildMotor()    
     {
-        _ally.AddComponent("Prop engines");
+        _ally.AddComponent("Fiberglass Wings");
+        return this;
     }
 
-    public void BuildWeapon()
+    public IBuilder BuildWeapon()    
     {
-        _ally.AddComponent("Twin 50 cals");
+        _ally.AddComponent("Missiles");
+        return this;
     }
 
-    public SupportAlly GetAlly()
+    public SupportAlly GetAlly()    
     {
-        return _ally;
+        return _ally;    
     }
 }
