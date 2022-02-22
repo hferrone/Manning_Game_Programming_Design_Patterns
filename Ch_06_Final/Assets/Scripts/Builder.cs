@@ -22,19 +22,22 @@ public class TankBuilder : IBuilder
 
     public IBuilder BuildFrame()    
     {
-        _ally.AddComponent("Steel Frame");
+        GameObject go = Utilities.CreateFromSO("Steel Frame");
+        _ally.AddComponent(go);
         return this;
     }
 
     public IBuilder BuildMotor()    
     {
-        _ally.AddComponent("Heavy Treads");
+        GameObject go = Utilities.CreateFromSO("Heavy Treads");
+        _ally.AddComponent(go);
         return this;
     }
 
     public IBuilder BuildWeapon()    
     {
-        _ally.AddComponent("Mortar");
+        GameObject go = Utilities.CreateFromSO("Mortar");
+        _ally.AddComponent(go);
         return this;
     }
 
@@ -55,19 +58,22 @@ public class DroneBuilder : IBuilder
 
     public IBuilder BuildFrame()
     {
-        _ally.AddComponent("Titanium Hull");
+        GameObject go = Utilities.CreateFromSO("Titanium Hull");
+        _ally.AddComponent(go);
         return this;
     }
 
     public IBuilder BuildMotor()    
     {
-        _ally.AddComponent("Fiberglass Wings");
+        GameObject go = Utilities.CreateFromSO("Fiberglass Wings");
+        _ally.AddComponent(go);
         return this;
     }
 
     public IBuilder BuildWeapon()    
     {
-        _ally.AddComponent("Missiles");
+        GameObject go = Utilities.CreateFromSO("Missiles");
+        _ally.AddComponent(go);
         return this;
     }
 

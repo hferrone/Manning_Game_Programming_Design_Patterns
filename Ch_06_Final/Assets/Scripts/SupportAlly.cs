@@ -14,12 +14,11 @@ public class SupportAlly
         parent = new GameObject(newAlly);
     }
 
-    public void AddComponent(string name)    
+    public void AddComponent(GameObject go)    
     {
-        GameObject go = Utilities.CreateFromSO(name);
         go.transform.SetParent(parent.transform);
         components.Add(go);
-        Debug.Log($"{name} component added!");
+        Debug.Log($"{go.name} component added!");
     }
 
     public string GetBlueprint()    
