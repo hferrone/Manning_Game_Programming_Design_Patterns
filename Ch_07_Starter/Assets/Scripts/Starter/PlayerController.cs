@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
 
     void CreateBullet()
     {
-        GameObject newBullet = Instantiate(bulletPrefab, this.transform.position + new Vector3(0, 0, 0), this.transform.rotation);
+        GameObject newBullet = Instantiate(bulletPrefab, this.transform.position + Vector3.zero , this.transform.rotation);
         Rigidbody bulletRB = newBullet.GetComponent<Rigidbody>();
         bulletRB.velocity = this.transform.forward * bulletSpeed;
     }
