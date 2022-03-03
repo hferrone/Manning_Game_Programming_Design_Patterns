@@ -4,11 +4,38 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    public float lifespan;    
+
+    void Awake()    
     {
-        if(other.gameObject.name == "Boundary")
+        lifespan = 0.0f;    
+    }
+
+    void Update()    
+    {
+        lifespan += 1.0f;    
+    }
+
+    void OnDisable()    
+    {
+        Debug.Log($"Projectile lifespan -> {lifespan} frames");    
+        lifespan = 0.0f;    
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name == "Boundary")
         {
-            ObjectPool.Shared.ReturnProjectile(this.gameObject);
+            GenericPool.shared.pool.Release(this);
+        }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Target")
+        {
+            Destroy(collision.gameObject);
+            GenericPool.shared.pool.Release(this);
         }
     }
 }

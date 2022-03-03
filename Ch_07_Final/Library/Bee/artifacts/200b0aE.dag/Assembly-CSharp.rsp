@@ -343,10 +343,11 @@
 -r:"Library/Bee/artifacts/200b0aE.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/200b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/200b0aE.dag/UnityEngine.UI.ref.dll"
+"Assets/Scripts/GenericPool.cs"
+"Assets/Scripts/MultiPool.cs"
 "Assets/Scripts/ObjectPool.cs"
 "Assets/Scripts/PlayerController.cs"
 "Assets/Scripts/Projectile.cs"
-"Assets/Scripts/Target.cs"
 -langversion:9.0
 
 /deterministic

@@ -4,55 +4,56 @@ using UnityEngine;
 
 public class ObjectPool : MonoBehaviour
 {
-    public static ObjectPool Shared;
-
-    public GameObject pooledObject;
+    public static ObjectPool Shared;    
+    public Projectile pooledObject;    
     public int poolSize;
 
-    private List<GameObject> _available = new List<GameObject>();
-    private List<GameObject> _inUse = new List<GameObject>();
+    private Queue<Projectile> _available = new Queue<Projectile>();    
 
-    void Awake()
+    void Awake()    
     {
         Shared = this;
         FillPool();
     }
 
-    public GameObject GetProjectile()
+    void CreatePooledObject()    
     {
-        if(_available.Count != 0)
-        {
-            GameObject projectile = _available[0];
-            _inUse.Add(projectile);
-            _available.Remove(projectile);
-            projectile.SetActive(true);
+        Projectile bullet = Instantiate(pooledObject);    
+        _available.Enqueue(bullet);    
+        bullet.gameObject.transform.SetParent(this.transform);    
+        bullet.gameObject.SetActive(false);    
+    }
 
-            return projectile;
+    void FillPool()    
+    {
+        for (int i = 0; i < poolSize; i++)    
+        {
+            CreatePooledObject();    
+        }
+    }
+
+    public Projectile GetObject()    
+    {
+        if(_available.Count == 0)
+        {
+            return null;
         }
 
-        return null;
-    }
-
-    public void ReturnProjectile(GameObject go)
-    {
-        _available.Add(go);
-        _inUse.Remove(go);
-        go.SetActive(false);
-    }
-
-    void CreateProjectile()
-    {
-        GameObject projectile = Instantiate(pooledObject);
-        _available.Add(projectile);
-        projectile.transform.SetParent(this.transform);
-        projectile.SetActive(false);
-    }
-
-    void FillPool()
-    {
-        for(int i = 0; i < poolSize; i++)
+        lock(_available)
         {
-            CreateProjectile();
+            Projectile bullet = _available.Dequeue();
+            bullet.gameObject.SetActive(true);
+
+            return bullet;
+        }
+    }
+
+    public void ReturnObject(Projectile bullet)    
+    {
+        lock(_available)
+        {
+            _available.Enqueue(bullet);
+            bullet.gameObject.SetActive(false);
         }
     }
 }

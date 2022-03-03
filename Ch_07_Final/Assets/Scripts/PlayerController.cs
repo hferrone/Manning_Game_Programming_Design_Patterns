@@ -37,19 +37,10 @@ public class PlayerController : MonoBehaviour
 
     void CreateBullet()
     {
-        //GameObject newBullet = Instantiate(bulletPrefab, this.transform.position, this.transform.rotation);
-        GameObject newBullet = ObjectPool.Shared.GetProjectile();
-
-        if(newBullet != null)
-        {
-            newBullet.transform.position = this.transform.position;
-            Rigidbody bulletRB = newBullet.GetComponent<Rigidbody>();
-            bulletRB.velocity = this.transform.forward * bulletSpeed;
-        }
-        else
-        {
-            Debug.Log("Your cannon is overheated...");
-        }
+        Projectile newBullet = GenericPool.shared.pool.Get();
+        newBullet.transform.position = this.transform.position;
+        Rigidbody bulletRB = newBullet.GetComponent<Rigidbody>();
+        bulletRB.velocity = this.transform.forward * bulletSpeed;
     }
 
     void Move()
