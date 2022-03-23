@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public float lifespan;    
+    public float lifespan;
 
     void Awake()    
     {
-        lifespan = 0.0f;    
+        lifespan = 0.0f;
     }
 
     void Update()    
