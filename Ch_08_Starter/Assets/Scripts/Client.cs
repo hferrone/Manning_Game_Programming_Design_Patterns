@@ -4,47 +4,85 @@ using UnityEngine;
 
 public class Client : MonoBehaviour
 {
+    public UnitController playerReceiver;
+    public UnitController ally1;
+    public UnitController ally2;
+
     private Invoker _invoker;
-    private Receiver _receiver;
-    private Command _moveUp, _moveDown, _moveLeft, _moveRight, _shoot;
+
+    private DecoupledCommand _spacebar, _mKey, _bKey;
+    private CoupledCommand _wKey, _sKey, _aKey, _dKey;
+
+    private bool _isShooting;
+    private bool _isJumping;
 
     void Start()
     {
         _invoker = new Invoker();
-        _receiver = new Receiver();
 
-        _moveUp = new MoveCommand(_receiver);
-        _moveDown = new MoveCommand(_receiver);
-        _moveLeft = new MoveCommand(_receiver);
-        _moveRight = new MoveCommand(_receiver);
-        _shoot = new ShootCommand(_receiver);
+        _spacebar = new ShootCommand();
+        _mKey = new MeleeCommand();
+        _bKey = new BlockCommand();
     }
 
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.W))
         {
-            _invoker.Run(_moveUp);
+            _wKey = new MoveCommand(playerReceiver, Direction.Up);
+            _invoker.Execute(_wKey);
         }
 
         if(Input.GetKeyDown(KeyCode.S))
         {
-            _invoker.Run(_moveDown);
+            _sKey = new MoveCommand(playerReceiver, Direction.Down);
+            _invoker.Execute(_sKey);
         }
 
         if (Input.GetKeyDown(KeyCode.A))
         {
-            _invoker.Run(_moveLeft);
+            _aKey = new MoveCommand(playerReceiver, Direction.Left);
+            _invoker.Execute(_aKey);
         }
 
         if (Input.GetKeyDown(KeyCode.D))
         {
-            _invoker.Run(_moveRight);
+            _dKey = new MoveCommand(playerReceiver, Direction.Right);
+            _invoker.Execute(_dKey);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.U))
         {
-            _invoker.Run(_shoot);
+            _invoker.Undo();
         }
+
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            _invoker.Redo();
+        }
+
+        if(Input.GetKeyUp(KeyCode.M))
+        {
+            //_mKey.Execute(playerReceiver);
+            _mKey.Execute(playerReceiver);
+        }
+
+        if(Input.GetKeyDown(KeyCode.B))
+        {
+            _bKey.Execute(ally1);
+        }
+
+        _isShooting |= Input.GetKeyDown(KeyCode.Space);
+    }
+
+    void FixedUpdate()
+    {
+        if (_isShooting)
+        {
+            _spacebar.Execute(ally2);
+            //_spacebar.Execute(allyReceiver);
+        }
+
+        _isShooting = false;
     }
 }

@@ -2,36 +2,67 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Command 
+public abstract class CoupledCommand 
 {
     protected Receiver receiver;
 
-    public Command(Receiver receiver)
+    public CoupledCommand(Receiver receiver)
     {
         this.receiver = receiver;
     }
 
-    public abstract void Run();
+    public abstract void Execute();
+    public abstract void Undo();
 }
 
-public class MoveCommand : Command
+public class MoveCommand : CoupledCommand
 {
-    public MoveCommand(Receiver receiver) : base(receiver) { }
+    private Direction direction;
 
-    public override void Run()
+    public MoveCommand(Receiver receiver, Direction direction) : base(receiver)
     {
-        Debug.Log("Receiver notified...");
-        receiver.Move();
+        this.direction = direction;
+    }
+
+    public override void Execute()
+    {
+        receiver.Move(direction);
+    }
+
+    public override void Undo()
+    {
+        receiver.Move(Utilities.ReversedDirection(direction));
     }
 }
 
-public class ShootCommand : Command
+public abstract class DecoupledCommand
 {
-    public ShootCommand(Receiver receiver) : base(receiver) { }
+    public abstract void Execute(Receiver receiver);
+}
 
-    public override void Run()
+public class ShootCommand : DecoupledCommand
+{
+    public override void Execute(Receiver receiver)
     {
         Debug.Log("Receiver notified...");
         receiver.Shoot();
+    }
+}
+
+public class MeleeCommand : DecoupledCommand
+{
+    public override void Execute(Receiver receiver)
+    {
+        Debug.Log("Receiver notified...");
+        receiver.Melee();
+    }
+}
+
+public class BlockCommand : DecoupledCommand
+{
+    public override void Execute(Receiver receiver)
+    {
+        Debug.Log("Receiver notified...");
+        receiver.Block();
     }
 }
