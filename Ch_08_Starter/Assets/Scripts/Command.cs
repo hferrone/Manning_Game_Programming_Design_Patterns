@@ -4,9 +4,9 @@ using UnityEngine;
 
 public abstract class CoupledCommand 
 {
-    protected Receiver receiver;
+    protected UnitController receiver;
 
-    public CoupledCommand(Receiver receiver)
+    public CoupledCommand(UnitController receiver)
     {
         this.receiver = receiver;
     }
@@ -17,32 +17,34 @@ public abstract class CoupledCommand
 
 public class MoveCommand : CoupledCommand
 {
-    private Direction direction;
+    private Vector3 _startingPos;
+    private Vector3 _endingPos;
 
-    public MoveCommand(Receiver receiver, Direction direction) : base(receiver)
+    public MoveCommand(UnitController receiver, Vector3 endPos) : base(receiver)
     {
-        this.direction = direction;
+        this._endingPos = endPos;
     }
 
     public override void Execute()
     {
-        receiver.Move(direction);
+        _startingPos = receiver.transform.position;
+        receiver.Move(_endingPos);
     }
 
     public override void Undo()
     {
-        receiver.Move(Utilities.ReversedDirection(direction));
+        receiver.Move(_startingPos);
     }
 }
 
 public abstract class DecoupledCommand
 {
-    public abstract void Execute(Receiver receiver);
+    public abstract void Execute(UnitController receiver);
 }
 
 public class ShootCommand : DecoupledCommand
 {
-    public override void Execute(Receiver receiver)
+    public override void Execute(UnitController receiver)
     {
         Debug.Log("Receiver notified...");
         receiver.Shoot();
@@ -51,7 +53,7 @@ public class ShootCommand : DecoupledCommand
 
 public class MeleeCommand : DecoupledCommand
 {
-    public override void Execute(Receiver receiver)
+    public override void Execute(UnitController receiver)
     {
         Debug.Log("Receiver notified...");
         receiver.Melee();
@@ -60,7 +62,7 @@ public class MeleeCommand : DecoupledCommand
 
 public class BlockCommand : DecoupledCommand
 {
-    public override void Execute(Receiver receiver)
+    public override void Execute(UnitController receiver)
     {
         Debug.Log("Receiver notified...");
         receiver.Block();

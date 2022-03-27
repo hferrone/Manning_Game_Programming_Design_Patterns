@@ -1,88 +1,54 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
+[RequireComponent(typeof(Invoker))]
+[RequireComponent(typeof(InputListener))]
 public class Client : MonoBehaviour
 {
-    public UnitController playerReceiver;
-    public UnitController ally1;
-    public UnitController ally2;
+    public UnitController receiver;
 
     private Invoker _invoker;
+    private InputListener _inputListener;
 
-    private DecoupledCommand _spacebar, _mKey, _bKey;
-    private CoupledCommand _wKey, _sKey, _aKey, _dKey;
-
-    private bool _isShooting;
-    private bool _isJumping;
-
-    void Start()
+    void Awake()
     {
-        _invoker = new Invoker();
-
-        _spacebar = new ShootCommand();
-        _mKey = new MeleeCommand();
-        _bKey = new BlockCommand();
+        _invoker = this.GetComponent<Invoker>();
+        _inputListener = this.GetComponent<InputListener>();
     }
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.W))
+        var command = _inputListener.GetCoupledCommand();
+        if(command != null)
         {
-            _wKey = new MoveCommand(playerReceiver, Direction.Up);
-            _invoker.Execute(_wKey);
+            _invoker.Execute(command);
         }
 
-        if(Input.GetKeyDown(KeyCode.S))
+        var reusableCommand = _inputListener.GetDecoupledCommand();
+        if(reusableCommand != null)
         {
-            _sKey = new MoveCommand(playerReceiver, Direction.Down);
-            _invoker.Execute(_sKey);
+            reusableCommand.Execute(receiver);
         }
 
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            _aKey = new MoveCommand(playerReceiver, Direction.Left);
-            _invoker.Execute(_aKey);
-        }
-
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            _dKey = new MoveCommand(playerReceiver, Direction.Right);
-            _invoker.Execute(_dKey);
-        }
-
-        if(Input.GetKeyDown(KeyCode.U))
+        if (Input.GetKeyDown(KeyCode.U))
         {
             _invoker.Undo();
         }
 
-        if(Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R))
         {
             _invoker.Redo();
         }
-
-        if(Input.GetKeyUp(KeyCode.M))
-        {
-            //_mKey.Execute(playerReceiver);
-            _mKey.Execute(playerReceiver);
-        }
-
-        if(Input.GetKeyDown(KeyCode.B))
-        {
-            _bKey.Execute(ally1);
-        }
-
-        _isShooting |= Input.GetKeyDown(KeyCode.Space);
     }
 
     void FixedUpdate()
     {
-        if (_isShooting)
+        var reusableCommand = _inputListener.GetDecoupledCommand();
+        if (reusableCommand != null)
         {
-            _spacebar.Execute(ally2);
-            //_spacebar.Execute(allyReceiver);
+            reusableCommand.Execute(receiver);
         }
-
-        _isShooting = false;
     }
 }

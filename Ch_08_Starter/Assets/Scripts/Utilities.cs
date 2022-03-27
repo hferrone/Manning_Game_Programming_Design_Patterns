@@ -2,14 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Direction
-{
-    Up, Down, Left, Right, Null
-}
-
 public static class Utilities
 {
-    public static Direction ReversedDirection(Direction direction)
+    public static Direction Reverse(Direction direction)
     {
         switch (direction)
         {

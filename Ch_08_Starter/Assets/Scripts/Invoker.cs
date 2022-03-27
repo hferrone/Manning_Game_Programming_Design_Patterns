@@ -2,18 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Invoker
+public class Invoker : MonoBehaviour
 {
     private Stack<CoupledCommand> _commandStack = new Stack<CoupledCommand>();
     private Stack<CoupledCommand> _redoStack = new Stack<CoupledCommand>();
+    private int _maxMoves = 6;
         
     public void Execute(CoupledCommand newCommand)
     {
-        Debug.Log($"{newCommand.ToString()} invoked...");
+        if(_commandStack.Count < _maxMoves)
+        {
+            Debug.Log($"{newCommand.ToString()} invoked...");
 
-        _commandStack.Push(newCommand);
-        _redoStack.Clear();
-        newCommand.Execute();
+            _commandStack.Push(newCommand);
+            _redoStack.Clear();
+            newCommand.Execute();
+        }
+        else
+        {
+            Debug.Log("Out of moves...");
+        }
     }
 
     public void Undo()

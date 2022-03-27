@@ -679,6 +679,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1273294636}
   - component: {fileID: 1273294635}
+  - component: {fileID: 1273294638}
+  - component: {fileID: 1273294637}
   m_Layer: 0
   m_Name: Client
   m_TagString: Untagged
@@ -698,9 +700,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f188d0042aad843e3b27e4d992bc9a47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerReceiver: {fileID: 121674703}
-  ally1: {fileID: 1857578520}
-  ally2: {fileID: 1965228443}
+  receiver: {fileID: 121674703}
 --- !u!4 &1273294636
 Transform:
   m_ObjectHideFlags: 0
@@ -715,6 +715,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1273294637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273294634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d225b957363544fdfb3c1b8a6cf31358, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 121674703}
+  ally1: {fileID: 1857578520}
+  ally2: {fileID: 1965228443}
+  turn: 1
+--- !u!114 &1273294638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273294634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e2b77b19c29f4448b4bbc83457de559, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1353210581
 GameObject:
   m_ObjectHideFlags: 0
