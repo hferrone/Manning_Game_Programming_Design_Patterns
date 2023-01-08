@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using UnityEngine.Experimental.Rendering;
 using UnityEngine.Serialization;
 using UnityEngine.U2D;
 
@@ -242,6 +243,7 @@ namespace UnityEngine.UI
         /// </remarks>
         /// <example>
         /// <code>
+        /// <![CDATA[
         /// //Attach this script to an Image GameObject and set its Source Image to the Sprite you would like.
         /// //Press the space key to change the Sprite. Remember to assign a second Sprite in this script's section of the Inspector.
         ///
@@ -269,7 +271,8 @@ namespace UnityEngine.UI
         ///         }
         ///     }
         /// }
-        /// </code>
+        /// ]]>
+        ///</code>
         /// </example>
 
         public Sprite sprite
@@ -283,7 +286,13 @@ namespace UnityEngine.UI
                     {
                         m_SkipLayoutUpdate = m_Sprite.rect.size.Equals(value ? value.rect.size : Vector2.zero);
                         m_SkipMaterialUpdate = m_Sprite.texture == (value ? value.texture : null);
+                        bool wasReadeable = !GraphicsFormatUtility.IsCrunchFormat(m_Sprite.texture.format) && m_Sprite.texture.isReadable;
                         m_Sprite = value;
+                        if (value != null && wasReadeable && (GraphicsFormatUtility.IsCrunchFormat(m_Sprite.texture.format) || !m_Sprite.texture.isReadable) && m_AlphaHitTestMinimumThreshold > 0)
+                        {
+                            Debug.LogWarning("Sprite was changed for one not readeable or with Crunch Compression. Resetting the AlphaHitThreshold to 0.", this);
+                            m_AlphaHitTestMinimumThreshold = 0;
+                        }
 
                         SetAllDirty();
                         TrackSprite();
@@ -294,6 +303,11 @@ namespace UnityEngine.UI
                     m_SkipLayoutUpdate = value.rect.size == Vector2.zero;
                     m_SkipMaterialUpdate = value.texture == null;
                     m_Sprite = value;
+                    if ((GraphicsFormatUtility.IsCrunchFormat(m_Sprite.texture.format) || !m_Sprite.texture.isReadable) && m_AlphaHitTestMinimumThreshold > 0)
+                    {
+                        Debug.LogWarning("Sprite was changed for one not readeable or with Crunch Compression. Resetting the AlphaHitThreshold to 0.", this);
+                        m_AlphaHitTestMinimumThreshold = 0;
+                    }
 
                     SetAllDirty();
                     TrackSprite();
@@ -334,6 +348,7 @@ namespace UnityEngine.UI
         /// the example code.  /Example1/ and /Example2/ are functions called by the button OnClick
         /// functions.  Example1 calls overrideSprite and Example2 sets overrideSprite to null.
         /// <code>
+        /// <![CDATA[
         /// using System.Collections;
         /// using System.Collections.Generic;
         /// using UnityEngine;
@@ -368,7 +383,8 @@ namespace UnityEngine.UI
         ///         i.overrideSprite = null;
         ///     }
         /// }
-        /// </code>
+        /// ]]>
+        ///</code>
         /// </example>
         public Sprite overrideSprite
         {
@@ -417,6 +433,7 @@ namespace UnityEngine.UI
         /// </remarks>
         /// <example>
         /// <code>
+        /// <![CDATA[
         /// using UnityEngine;
         /// using System.Collections;
         /// using UnityEngine.UI;
@@ -431,7 +448,8 @@ namespace UnityEngine.UI
         ///         xmasCalenderDoor.fillCenter = false;
         ///     }
         /// }
-        /// </code>
+        /// ]]>
+        ///</code>
         /// </example>
         public bool fillCenter { get { return m_FillCenter; } set { if (SetPropertyUtility.SetStruct(ref m_FillCenter, value)) SetVerticesDirty(); } }
 
@@ -452,6 +470,7 @@ namespace UnityEngine.UI
         /// </remarks>
         /// <example>
         /// <code>
+        /// <![CDATA[
         /// using UnityEngine;
         /// using System.Collections;
         /// using UnityEngine.UI; // Required when Using UI elements.
@@ -472,7 +491,8 @@ namespace UnityEngine.UI
         ///         }
         ///     }
         /// }
-        /// </code>
+        /// ]]>
+        ///</code>
         /// </example>
         public float fillAmount { get { return m_FillAmount; } set { if (SetPropertyUtility.SetStruct(ref m_FillAmount, Mathf.Clamp01(value))) SetVerticesDirty(); } }
 
@@ -487,6 +507,7 @@ namespace UnityEngine.UI
         /// </remarks>
         /// <example>
         /// <code>
+        /// <![CDATA[
         /// using UnityEngine;
         /// using System.Collections;
         /// using UnityEngine.UI; // Required when Using UI elements.
@@ -509,7 +530,8 @@ namespace UnityEngine.UI
         ///         }
         ///     }
         /// }
-        /// </code>
+        /// ]]>
+        ///</code>
         /// </example>
         public bool fillClockwise { get { return m_FillClockwise; } set { if (SetPropertyUtility.SetStruct(ref m_FillClockwise, value)) SetVerticesDirty(); } }
 
@@ -525,6 +547,7 @@ namespace UnityEngine.UI
         /// </remarks>
         /// <example>
         /// <code>
+        /// <![CDATA[
         /// using UnityEngine;
         /// using UnityEngine.UI;
         /// using System.Collections;
@@ -560,7 +583,8 @@ namespace UnityEngine.UI
         ///         Debug.Log(string.Format("{0} is using {1} fill method with the origin on {2}", name, image.fillMethod, fillOriginName));
         ///     }
         /// }
-        /// </code>
+        /// ]]>
+        ///</code>
         /// </example>
         public int fillOrigin { get { return m_FillOrigin; } set { if (SetPropertyUtility.SetStruct(ref m_FillOrigin, value)) SetVerticesDirty(); } }
 
@@ -588,6 +612,7 @@ namespace UnityEngine.UI
         /// </remarks>
         /// <example>
         /// <code>
+        /// <![CDATA[
         /// using UnityEngine;
         /// using System.Collections;
         /// using UnityEngine.UI; // Required when Using UI elements.
@@ -602,9 +627,18 @@ namespace UnityEngine.UI
         ///         theButton.alphaHitTestMinimumThreshold = 0.5f;
         ///     }
         /// }
-        /// </code>
+        /// ]]>
+        ///</code>
         /// </example>
-        public float alphaHitTestMinimumThreshold { get { return m_AlphaHitTestMinimumThreshold; } set { m_AlphaHitTestMinimumThreshold = value; } }
+        public float alphaHitTestMinimumThreshold { get { return m_AlphaHitTestMinimumThreshold; }
+            set
+            {
+                if (sprite != null && (GraphicsFormatUtility.IsCrunchFormat(sprite.texture.format) || !sprite.texture.isReadable))
+                    throw new InvalidOperationException("alphaHitTestMinimumThreshold should not be modified on a texture not readeable or not using Crunch Compression.");
+
+                m_AlphaHitTestMinimumThreshold = value;
+            }
+        }
 
         /// Controls whether or not to use the generated mesh from the sprite importer.
         [SerializeField] private bool m_UseSpriteMesh;
@@ -1778,6 +1812,9 @@ namespace UnityEngine.UI
 
             Rect rect = GetPixelAdjustedRect();
 
+            if (m_PreserveAspect)
+                PreserveSpriteAspectRatio(ref rect, new Vector2(activeSprite.texture.width, activeSprite.texture.height));
+
             // Convert to have lower left corner as reference point.
             local.x += rectTransform.pivot.x * rect.width;
             local.y += rectTransform.pivot.y * rect.height;
@@ -1785,9 +1822,8 @@ namespace UnityEngine.UI
             local = MapCoordinate(local, rect);
 
             // Convert local coordinates to texture space.
-            Rect spriteRect = activeSprite.textureRect;
-            float x = (spriteRect.x + local.x) / activeSprite.texture.width;
-            float y = (spriteRect.y + local.y) / activeSprite.texture.height;
+            float x = local.x / activeSprite.texture.width;
+            float y = local.y / activeSprite.texture.height;
 
             try
             {
@@ -1873,6 +1909,7 @@ namespace UnityEngine.UI
         {
             SetMaterialDirty();
             SetVerticesDirty();
+            SetRaycastDirty();
         }
 
 #if UNITY_EDITOR

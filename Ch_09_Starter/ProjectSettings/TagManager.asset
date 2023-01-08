@@ -4,7 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Projectile
+  - Boundary
+  - Target
+  - Health
   layers:
   - Default
   - TransparentFX

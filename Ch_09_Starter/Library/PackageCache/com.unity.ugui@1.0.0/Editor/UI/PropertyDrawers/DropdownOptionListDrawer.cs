@@ -1,3 +1,4 @@
+using System;
 using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,8 +15,10 @@ namespace UnityEditor.UI
 
         private void Init(SerializedProperty property)
         {
-            if (m_ReorderableList != null)
+            if (m_ReorderableList != null && m_ReorderableList.serializedProperty.serializedObject.m_NativeObjectPtr != IntPtr.Zero)
+            {
                 return;
+            }
 
             SerializedProperty array = property.FindPropertyRelative("m_Options");
 
