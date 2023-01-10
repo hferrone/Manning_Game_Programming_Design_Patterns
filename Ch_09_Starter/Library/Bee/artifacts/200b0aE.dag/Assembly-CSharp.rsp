@@ -342,7 +342,6 @@
 -r:"Library/Bee/artifacts/200b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/Scripts/BasePrefab.cs"
 "Assets/Scripts/EnemySpawner.cs"
-"Assets/Scripts/PauseManager.cs"
 "Assets/Scripts/Player.cs"
 "Assets/Scripts/TrophyManager.cs"
 "Assets/Scripts/UIManager.cs"
